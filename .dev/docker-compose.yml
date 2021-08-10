@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  db:
+    image: 'postgres:latest'
+    container_name: quepon-db
+    restart: always
+    env_file:
+      - db.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+  # redis:
+  #   image: redis
+  #   container_name: quepon-redis
+  #   # restart: always
+  #   restart: unless-stopped
+  #   env_file:
+  #     - redis.env
+  #   ports:
+  #     - 6379:6379
+
+  # api:
+  #   build: ./services
+  #   command:
+  #     sh -c 'npm i && npm run build && npm run start'
+  #   env_file:
+  #     - api.env
+  #   volumes:
+  #     - ./services:/var/www/api
+  #   ports:
+  #     - 3001:3001
+
+volumes:
+  pgdata:
+    external: true
