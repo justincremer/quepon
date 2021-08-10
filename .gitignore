@@ -1,1 +1,10 @@
+*/build/
+*/dist/
+*/node_modules/
+
+*/.pnp
+*.pnp.js
+*.local
+*.log
 *.env
+dir_locales
