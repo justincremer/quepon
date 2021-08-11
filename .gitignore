@@ -6,4 +6,4 @@
 *.pnp.js
 *.local
 *.log
-*.env
+*prod.env

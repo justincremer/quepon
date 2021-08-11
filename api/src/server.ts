@@ -23,7 +23,7 @@ class Server {
     this.routes(router);
   }
 
-  private async routes(router: ServerRouter) {
+  public async routes(router: ServerRouter) {
     await createConnection(this.db);
     this.app.use(router.routes);
   }

@@ -1,7 +1,9 @@
 import { Server } from "./server";
 import * as dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({
+  path: "dev.env",
+});
 
 const server = new Server();
 

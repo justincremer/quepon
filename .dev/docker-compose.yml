@@ -6,7 +6,7 @@ services:
     container_name: quepon-db
     restart: always
     env_file:
-      - db.env
+      - dev.env
     volumes:
       - pgdata:/var/lib/postgresql/data/
     ports:
