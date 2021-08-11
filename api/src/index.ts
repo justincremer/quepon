@@ -1,14 +1,17 @@
 import "reflect-metadata";
 import { createConnection } from "typeorm";
-import { User } from "./entity/User";
+import { User } from "./entity";
 
-createConnection()
+createConnection("development")
   .then(async (connection) => {
-    const user = new User();
-    user.firstName = "Timber";
-    user.lastName = "Saw";
-    user.age = 25;
-    await connection.manager.save(user);
+    // let user = new User();
+    // user.firstName = "justin";
+    // user.lastName = "cremer";
+    // user.age = 23;
+
+    // connection.manager
+    // .save(user)
+    // .then((user) => console.log(`User ${user.id} has been saved.`));
 
     const users = await connection.manager.find(User);
     console.log("Loaded users: ", users);

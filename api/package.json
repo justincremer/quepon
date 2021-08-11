@@ -1,32 +1,31 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "license": "BSD",
-  "author": {
-    "name": "Justin Cremer",
-    "url": "https://github.com/justincremer"
-  },
-  "main": "src/index.ts",
-  "scripts": {
-    "watch": "tsc -w --outDir ./dist",
-    "build": "tsc --outDir ./dist",
-    "dev": "nodemon dist/index.js",
-    "seed": "ts-node src/runSeed.ts"  
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "pg": "^8.7.1",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.36"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.13",
-    "@types/jest": "^26.0.24",
-    "@types/node": "^16.4.13",
-    "@types/pg": "^8.6.1",
-    "jest": "^27.0.6",
-    "nodemon": "^2.0.12",
-    "ts-node": "^10.2.0",
-    "typescript": "^4.3.5"
-  }
+	"name": "api",
+	"version": "1.0.0",
+	"license": "BSD",
+	"author": {
+		"name": "Justin Cremer",
+		"url": "https://github.com/justincremer"
+	},
+	"scripts": {
+		"dev": "nodemon --exec ts-node src/index.ts",
+		"test": "jest --watch",
+		"build": "rimraf ./dist && tsc",
+		"seed": "ts-node src/runSeed.ts"
+	},
+	"dependencies": {
+		"express": "^4.17.1",
+		"pg": "^8.7.1",
+		"reflect-metadata": "^0.1.13",
+		"typeorm": "^0.2.36"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.13",
+		"@types/jest": "^26.0.24",
+		"@types/node": "^16.4.13",
+		"@types/pg": "^8.6.1",
+		"jest": "^27.0.6",
+		"nodemon": "^2.0.12",
+		"ts-node": "^10.2.0",
+		"typescript": "^4.3.5"
+	}
 }

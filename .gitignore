@@ -7,4 +7,4 @@
 *.local
 *.log
 *.env
-dir_locales
+*.el

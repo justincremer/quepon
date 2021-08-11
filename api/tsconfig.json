@@ -1,17 +1,25 @@
 {
-   "compilerOptions": {
-      "lib": [
-         "es5",
-         "es6",
-         "ES2020",
-         "DOM",
-      ],
-      "target": "es5",
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "outDir": "./build",
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "sourceMap": true
-   }
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+		"sourceMap": true,
+		"outDir": "./dist",
+		"moduleResolution": "node",
+		"removeComments": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,				
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowSyntheticDefaultImports": false,
+		"emitDecoratorMetadata": true,		
+		"experimentalDecorators": true,
+		"baseUrl": "..",		
+	},
+	"exclude": ["node_modules"],
+	"include": ["./src/**/*.ts"]
 }
