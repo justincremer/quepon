@@ -10,6 +10,7 @@
 		"dev": "nodemon --exec ts-node src/index.ts",
 		"test": "jest --watch",
 		"build": "rimraf ./dist && tsc",
+		"lint": "eslint ./src --ext .ts",
 		"seed": "ts-node src/runSeed.ts"
 	},
 	"dependencies": {

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "BSD",
   "author": {
-    "name": "Justin Cremer", 
+    "name": "Justin Cremer",
     "url": "https://github.com/justincremer"
   },
   "private": true,
@@ -27,6 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint": "eslint ./src --ext .ts",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
