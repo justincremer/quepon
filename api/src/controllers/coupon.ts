@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { DeleteResult, UpdateResult } from "typeorm";
+import { ConnectionManager, DeleteResult, UpdateResult } from "typeorm";
 import { Coupon } from "../entity";
 import { CouponService } from "../services";
 

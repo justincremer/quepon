@@ -2,7 +2,7 @@ import "reflect-metadata";
 import * as express from "express";
 
 import { ServerRouter } from "./router";
-import { createConnection } from "typeorm";
+import { Connection, createConnection } from "typeorm";
 
 class Server {
   private host: string;
@@ -17,14 +17,13 @@ class Server {
     this.base_url = process.env.BASE_URL ?? "/";
     this.db = process.env.DB ?? "development";
 
-    const router: ServerRouter = new ServerRouter(this.db, this.base_url);
-
     this.app = express();
-    this.routes(router);
+    this.routes();
   }
 
-  public async routes(router: ServerRouter) {
+  public async routes() {
     await createConnection(this.db);
+    const router: ServerRouter = new ServerRouter(this.db, this.base_url);
     this.app.use(router.routes);
   }
 
