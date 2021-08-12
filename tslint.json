@@ -11,5 +11,6 @@
     "no-submodule-imports": false,
     "jsx-no-lambda": false
   },
-  "rulesDirectory": []
+  "rulesDirectory": [],
+  "linterOptions": {"include": ["*.ts", "*.tsx"]}
 }

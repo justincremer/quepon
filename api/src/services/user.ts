@@ -1,6 +1,6 @@
 import { getConnection } from "typeorm";
 import { UserRepository } from "../entity";
-import { UserEntity } from "../entity/user";
+import { User } from "../entity/user";
 
 class UserService {
   private repo: UserRepository;
@@ -11,14 +11,14 @@ class UserService {
 
   public list = async () => await this.repo.find();
 
-  public get = async (id: string) => await this.repo.findOne(id);
+  public get = async (id: number) => await this.repo.findOne(id);
 
-  public create = async (user: UserEntity) => await this.repo.save(user);
+  public create = async (user: User) => await this.repo.save(user);
 
-  public update = async (id: string, user: UserEntity) =>
+  public update = async (id: number, user: User) =>
     await this.repo.update(id, user);
 
-  public delete = async (id: string) => await this.repo.delete(id);
+  public delete = async (id: number) => await this.repo.delete(id);
 }
 
 export { UserService };

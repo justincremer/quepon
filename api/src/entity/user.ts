@@ -5,10 +5,16 @@ import {
   Repository,
   EntityRepository,
 } from "typeorm";
-import { IsDate, IsEmail, IsInt, Length, Max, Min } from "class-validator";
+import { IsDate, IsEmail, IsString, Length, Max, Min } from "class-validator";
+
+enum Permissions {
+  Root,
+  Admin,
+  User,
+}
 
 @Entity("users")
-class UserEntity {
+class User {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -21,6 +27,16 @@ class UserEntity {
   updatedOn: Date;
 
   @Column()
+  @IsEmail()
+  @Length(12, 64)
+  email: string;
+
+  @Column()
+  @IsString()
+  @Length(12, 64)
+  password: string;
+
+  @Column()
   @Length(1, 32)
   firstName: string;
 
@@ -29,18 +45,15 @@ class UserEntity {
   lastName: string;
 
   @Column()
-  @IsEmail()
-  @Length(12, 64)
-  email: string;
+  @Min(0)
+  @Max(120)
+  age: number;
 
   @Column()
-  @IsInt()
-  @Min(0)
-  @Max(100)
-  age: number;
+  permissions: Permissions;
 }
 
-@EntityRepository(UserEntity)
-class UserRepository extends Repository<UserEntity> {}
+@EntityRepository(User)
+class UserRepository extends Repository<User> {}
 
-export { UserEntity, UserRepository };
+export { User, UserRepository };
