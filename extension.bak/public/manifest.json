@@ -1,0 +1,38 @@
+{
+  "name": "Quepon",
+  "description": "A coupon management extension",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Quepon"
+  },
+  "icons": {
+    "16": "logo192.png",
+    "48": "logo192.png",
+    "128": "logo192.png",
+    "512": "logo512.png"
+  },   
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
